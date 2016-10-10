@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PK2 Editor</title>
+    <link href="//dl.dropboxusercontent.com/u/3681010/Projects/PK2_background/css/editor.css" rel="stylesheet"/>
+    <script type="text/javascript">
+        var pk2assetsroot = "//dl.dropboxusercontent.com/u/158776840/vanilla_assets/";
+    </script>
+    <script type="text/javascript" src="//dl.dropboxusercontent.com/u/3681010/Projects/PK2_background/require.js"></script>
+    <script type="text/javascript" src="//dl.dropboxusercontent.com/u/3681010/Projects/PK2_background/pk2_editor.js"></script>
+</head>
+<body>
+<canvas id="bg-canvas" width="640" height="480">Canvas unsupported</canvas>
+<textarea id="devOut" class="hiddenComponent">DevOut</textarea>
+<select id="map-selector" onchange="loadMapAndCenterOnStart(this.value);">
+    <optgroup label="Rooster Island 1">
+        <option value="rooster island 1/level001.map">Level 1: Training Course</option>
+        <option value="rooster island 1/level002.map">Level 2: Apple Hills</option>
+        <option value="rooster island 1/level003.map">Level 3: Scrambled Eggs</option>
+        <option value="rooster island 1/level004.map" selected>Level 4: Rainy Forest</option>
+        <option value="rooster island 1/level005.map">Level 5: Castle of Towers</option>
+        <option value="rooster island 1/level006.map">Level 6: Hedgehog River</option>
+        <option value="rooster island 1/level007.map">Level 7: Cave of the Bees</option>
+        <option value="rooster island 1/level008.map">Level 8: Bird Alert!</option>
+        <option value="rooster island 1/level009.map">Level 9: Forest Riddle</option>
+        <option value="rooster island 1/level010.map">Level 10: Teleport Castle</option>
+        <option value="rooster island 1/level011.map">Level 11: Boss Battle</option>
+    </optgroup>
+    <optgroup label="Rooster Island 2">
+        <option value="rooster island 2/level1.map">Level 1: Cliffhanger</option>
+        <option value="rooster island 2/level2.map">Level 2: Frogwell</option>
+        <option value="rooster island 2/level3.map">Level 3: Water Cavern</option>
+        <option value="rooster island 2/level4.map">Level 4: Green Bee River</option>
+        <option value="rooster island 2/level5.map">Level 5: Forest Riddle 2</option>
+        <option value="rooster island 2/level6.map">Level 6: Castle of Clocks</option>
+        <option value="rooster island 2/level7.map">Level 7: Apple Hills 2</option>
+        <option value="rooster island 2/level8.map">Level 8: Chicks 'n' Stones</option>
+        <option value="rooster island 2/level9.map">Level 9: Castle of Keys</option>
+        <option value="rooster island 2/level10.map">Level 10: Flaming Pigs</option>
+        <option value="rooster island 2/level12.map">Level 11: Factory 1</option>
+        <option value="rooster island 2/level11.map">Level 12: Factory 2</option>
+        <option value="rooster island 2/level13.map">Level 13: Boss Battle</option>
+    </optgroup>
+    <optgroup label="Test Cases">
+        <option value="testcases/case01.map">Case 01</option>
+        <option value="testcases/case02.map">Case 02</option>
+        <option value="testcases/case03.map">Case 03</option>
+        <option value="testcases/case04.map">Case 04</option>
+        <option value="testcases/case05.map">Case 05</option>
+        <option value="testcases/case06.map">Case 06</option>
+        <option value="testcases/case07.map">Case 07</option>
+        <option value="testcases/case08.map">Case 08</option>
+        <option value="testcases/case09.map">Case 09</option>
+        <option value="testcases/case10.map">Case 10</option>
+        <option value="testcases/case11.map">Case 11</option>
+    </optgroup>
+</select>
+<div id="editor-toolbox" class="hiddenComponent">
+    <button id="save-map-button" onclick="map.writeMap();">SaveMap</button>
+    <button id="play-music-button" onclick="playBtnHandler(this);">Play Level Music</button>
+    <div id="mapDragFileInput">Drag Map Here To Load</div>
+</div>
+<div id="editor-tileset-canvas-container" class="hiddenComponent">
+    <canvas id="editor-tileset-canvas" width="320" height="480"></canvas>
+</div>
+</body>
+</html>
